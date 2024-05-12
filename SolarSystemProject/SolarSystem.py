@@ -8,6 +8,7 @@ from Vector import Vector
 #* - Add more objects
 #* - Remove Sun if Planet collides with it
 #* - Add more complex interactions (e.g. black holes, moons, etc.)
+#* - Replicate in JavaScript
 
 class SolarSystem:
     
@@ -41,7 +42,7 @@ class SolarSystem:
             self.ax.zaxis.set_ticklabels([])
         else:
             self.ax.axis(False)
-        plt.pause(0.01)
+        plt.pause(0.001)
         self.ax.clear()
             
         
@@ -68,7 +69,7 @@ class SolarSystemObject:
         self.position = (self.position[0] + self.velocity[0], self.position[1] + self.velocity[1], self.position[2] + self.velocity[2])
     
     def draw(self):
-        self.solar_system.ax.plot(*self.position, 'o', markersize=self.display_size + self.position[0] / 30, color=self.color)
+        self.solar_system.ax.plot(*self.position, 'o', markersize=self.display_size + self.position[0]/30, color=self.color)
         if self.solar_system.projection_2d:
             self.solar_system.ax.plot(self.position[0], self.position[1], -self.solar_system.size/2, 'o', markersize=self.display_size/2, color=(.5, .5, .5))
         

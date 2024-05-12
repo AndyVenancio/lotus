@@ -1,6 +1,6 @@
 from SolarSystem import SolarSystem, Sun, Planet
 
-solar_system = SolarSystem(400)
+solar_system = SolarSystem(400, projection_2d=False)
 
 suns = (
     Sun(solar_system, position=(40, 40, 40), velocity=(6, 0, 6)),
